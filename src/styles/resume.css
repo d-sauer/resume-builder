@@ -137,7 +137,7 @@
   display: grid;
   grid-template-columns: 32mm 1fr;
   gap: 6mm;
-  margin-bottom: 6mm;
+  margin-bottom: 0;
   break-inside: avoid;
 }
 
