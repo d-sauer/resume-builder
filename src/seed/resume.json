@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "app": "resume-builder",
+    "appVersion": "1.0.0",
+    "exportedAt": null
+  },
+  "basics": {
+    "name": "Davor Sauer",
+    "contacts": [
+      {
+        "label": "Address",
+        "value": "Utrecht, Netherlands"
+      },
+      {
+        "label": "Phone number",
+        "value": "+31 (0)6 4738 4394"
+      },
+      {
+        "label": "Email address",
+        "value": "davor.sauer@gmail.com",
+        "url": "mailto:davor.sauer@gmail.com"
+      },
+      {
+        "label": "Web",
+        "value": "https://www.linkedin.com/in/davorsauer/",
+        "url": "https://www.linkedin.com/in/davorsauer/"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "profile",
+      "title": "Profile",
+      "icon": "user",
+      "type": "text",
+      "paragraphs": [
+        "Curious about the problems at hand, and passionate about turning the tide by driving technological advancement and cross-functional collaboration to help teams achieve higher goals for the organisation. Gladly taking ownership of the challenges and moving them across the finish line, from ideation, architecture, design, to engineering and operations.",
+        "Proactive with clear communication and strong critical thinking, I also possess a knack for developing strategic solutions, facilitating collaborative problem-solving, and bringing out the best in others.",
+        "I love pragmatic solutions and hands-on experimentation with various technologies and architectural designs to ensure my visions have solid implementation foundations."
+      ]
+    },
+    {
+      "id": "highlights",
+      "title": "Highlights",
+      "icon": "sparkle",
+      "type": "tags",
+      "items": [
+        "Ownership Culture",
+        "Critical Thinking",
+        "Strategy",
+        "Collaboration",
+        "Problem Solving",
+        "Mentorship",
+        "Team Topologies",
+        "Stakeholder Engagement",
+        "Sociotechnical Architecture",
+        "Engineering",
+        "Vibe Engineering",
+        "Platform Engineering"
+      ]
+    },
+    {
+      "id": "work-experience",
+      "title": "Work Experience",
+      "icon": "briefcase",
+      "type": "timeline",
+      "entries": [
+        {
+          "meta": "09/2024 – present",
+          "title": "Technology Architecture Directory",
+          "subtitle": "Ayvens",
+          "bullets": [
+            "Enterprise Architecture, Software & Solution architecture designs and reviews, ensuring successful initiative execution, overseeing and managing technology initiatives across departments.",
+            "Managed post-M&A technology assessment and rationalization across two organizations for efficiency and cost optimization.",
+            "Implementing technology strategy and innovative initiatives aligned with business objectives and new corporate standards in alignment with group standards and enterprise architects.",
+            "Aligned cross-functional stakeholders, ensuring strategic technology solution delivery.",
+            "Transformed the previous architecture department into a scalable enterprise-wide operation.",
+            "Designed Target Operating Model, improving operational efficiency and cost optimisation.",
+            "Active Works Council member representing employee interests in organisational decisions."
+          ]
+        },
+        {
+          "meta": "11/2019 – 09/2024",
+          "title": "Head of Architecture",
+          "subtitle": "LeasePlan Digital / Ayvens",
+          "bullets": [
+            "Launched the API-First & Integration platform, scaled up the integration team, and drove organisational adoption, vendor selection, cross-team alignment, and strategic design to accelerate digital transformation.",
+            "Ramp up the architecture department, scaling the team to 40+ architects across 50 product-led teams, while leading digital transformation architecture, delivering an enterprise-wide distributed system with successful program execution.",
+            "Technology Strategy Board member reviewing 350+ proposals and providing strategic direction over the last years.",
+            "Managed vendor negotiations and enterprise technology procurement decisions.",
+            "Built an architecture community fostering collaboration with knowledge sharing, led people management initiatives, and developed departmental capabilities.",
+            "Works Council member contributing to organisational governance."
+          ]
+        },
+        {
+          "meta": "06/2018 – 11/2019",
+          "title": "Lead Software Architect",
+          "subtitle": "LeasePlan Digital",
+          "bullets": [
+            "Built and scaled the solution architecture department from the ground up, establishing discipline that enhanced business agility, operational efficiency, and innovation for sustainable growth.",
+            "Working with product and engineering, directed technical design reviews and oversight, aligning all solutions with strategic company vision and technical standards.",
+            "Architected solutions and coordinated execution for critical business projects, ensuring strategic alignment and technical excellence across multiple concurrent initiatives.",
+            "Drove cross-functional collaboration between architect and engineering teams, optimising costs and accelerating product delivery timelines."
+          ]
+        },
+        {
+          "meta": "08/2017 – 05/2018",
+          "title": "Software Architect",
+          "subtitle": "Backbase",
+          "bullets": [
+            "Advanced core microservice components for a new company platform, engineering enhanced scalability and technical capabilities.",
+            "Enabled successful client implementation by supporting the professional services team in platform deployment and integration.",
+            "Designed technical (microservices, authentication, security) solutions, ensuring architectural and engineering alignment with product and strategic objectives.",
+            "Mentored cross-functional teams on microservice utilisation, technical problem-solving, and efficiency optimisation."
+          ]
+        },
+        {
+          "meta": "12/2016 – 08/2017",
+          "title": "Technical Product Owner",
+          "subtitle": "Backbase",
+          "bullets": [
+            "Developed core microservice components for the company's new banking platform, delivering a scalable architecture foundation.",
+            "Managed technical planning and team growth while aligning requirements across multiple product owner stakeholders.",
+            "Harmonised backend technologies through cross-team coordination and guild leadership, reducing maintenance overhead and enhancing organisational knowledge sharing."
+          ]
+        },
+        {
+          "meta": "11/2014 – 12/2016",
+          "title": "Senior Backend Developer",
+          "subtitle": "Backbase",
+          "bullets": [
+            "Built mobile APIs enabling the company's mobile-first strategy and improving customer engagement capabilities.",
+            "Architected critical microservices and libraries for a new banking platform, implementing scalable foundation components.",
+            "Led code review processes, improving code quality, maintainability, and cross-team knowledge transfer.",
+            "Conducted technical hiring interviews and provided Scrum Master leadership for agile project delivery."
+          ]
+        },
+        {
+          "meta": "11/2014 – 12/2016",
+          "title": "Software Engineer",
+          "subtitle": "Evolva d.o.o.",
+          "bullets": [
+            "Architected and led the company's largest loan management system implementation, launching MVP within six months and scaling to a successful two-country deployment over two years.",
+            "Built customised business web applications through close client collaboration, ensuring solutions precisely matched requirements and business needs.",
+            "Improved workflow management and development frameworks, reducing the company's delivery time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strengths",
+      "title": "Strengths",
+      "icon": "star",
+      "type": "bullets",
+      "items": [
+        "**Architecture & Engineering Leader** with hands-on expertise in system design, research, and innovation, delivering pragmatic and scalable solutions.",
+        "**Managing cross-functional teams** through large-scale digital transformations and complex technical initiatives, applying critical thinking and collaborative problem-solving approaches.",
+        "**Strategic focus** on aligning technology architecture with business needs, driving engineering efficiency and platform engineering excellence to maximise organisational impact.",
+        "**Passionate about technical excellence** through mentoring, coaching, and fostering innovative engineering cultures while maintaining a curious and adaptable mindset.",
+        "**Technical expertise** with cloud architecture patterns, microservices, Domain-Driven Design (DDD), Event-Driven Architecture (EDA), Containerisation, GenAI integration, API design, and Full Software Development Lifecycle."
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "icon": "flask",
+      "type": "skills",
+      "groups": [
+        {
+          "name": "Leadership",
+          "items": [
+            {
+              "name": "Mentoring, Coaching, & People Development",
+              "level": "Professional"
+            },
+            {
+              "name": "Technology Vision & Strategy",
+              "level": "Professional"
+            },
+            {
+              "name": "Empowerment & Cross-Functional Collaboration",
+              "level": "Professional"
+            },
+            {
+              "name": "Business-Technology Alignment",
+              "level": "Professional"
+            },
+            {
+              "name": "Stakeholder Management & Conflict Resolution",
+              "level": "Professional"
+            },
+            {
+              "name": "Innovative Initiatives",
+              "level": "Professional"
+            },
+            {
+              "name": "Technical Hiring Interviews",
+              "level": "Professional"
+            },
+            {
+              "name": "Digital Transformation",
+              "level": "Professional"
+            }
+          ]
+        },
+        {
+          "name": "Architecture & Engineering",
+          "items": [
+            {
+              "name": "System Design & Architecture",
+              "level": "Professional"
+            },
+            {
+              "name": "Technology Evaluation",
+              "level": "Professional"
+            },
+            {
+              "name": "API, Integration, & Interoperability",
+              "level": "Professional"
+            },
+            {
+              "name": "Scalability & Performance",
+              "level": "Professional"
+            },
+            {
+              "name": "Security, Compliance, & Risk",
+              "level": "Professional"
+            },
+            {
+              "name": "Cloud & Containerisation",
+              "level": "Professional"
+            },
+            {
+              "name": "Domain-Driven Design",
+              "level": "Professional"
+            },
+            {
+              "name": "Microservices, Event-Driven Architecture",
+              "level": "Professional"
+            },
+            {
+              "name": "Maintenance, Technical Debt, Redesign, Reduction",
+              "level": "Professional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formal-education",
+      "title": "Formal Education",
+      "icon": "graduation",
+      "type": "timeline",
+      "entries": [
+        {
+          "meta": "Zagreb, Croatia",
+          "title": "Information Science | Master's degree",
+          "subtitle": "University of Zagreb"
+        },
+        {
+          "meta": "Zagreb, Croatia",
+          "title": "Electronics Engineering",
+          "subtitle": "High School"
+        }
+      ]
+    },
+    {
+      "id": "leadership-education",
+      "title": "Leadership Education",
+      "icon": "graduation",
+      "type": "timeline",
+      "entries": [
+        {
+          "meta": "10/2025",
+          "title": "Story design and storytelling training",
+          "subtitle": "Nobbe Mieras"
+        },
+        {
+          "meta": "2024",
+          "title": "Managing, Digital & IT",
+          "subtitle": "in company"
+        },
+        {
+          "meta": "2024",
+          "title": "Team Topologies Masterclass - Success Patterns for Fast Flow",
+          "subtitle": "DDD Academy"
+        },
+        {
+          "meta": "2022",
+          "title": "Leadership skills for architects and other technical leaders",
+          "subtitle": "High Tech Institute"
+        },
+        {
+          "meta": "2021",
+          "title": "EventStorming Remote Modelling",
+          "subtitle": "DDD Academy"
+        },
+        {
+          "meta": "2019",
+          "title": "Coaching",
+          "subtitle": "in company"
+        },
+        {
+          "meta": "2017",
+          "title": "Leadership training",
+          "subtitle": "How Company"
+        }
+      ]
+    },
+    {
+      "id": "architecture-education",
+      "title": "Architecture & Engineering Education",
+      "icon": "graduation",
+      "type": "timeline",
+      "entries": [
+        {
+          "meta": "2024",
+          "title": "Domain Storytelling",
+          "subtitle": "DDD Academy, Workshop"
+        },
+        {
+          "meta": "2023",
+          "title": "Platform Design",
+          "subtitle": "DDD Academy, workshop by Jabe Bloom"
+        },
+        {
+          "meta": "2023",
+          "title": "AWS Security Best Practices",
+          "subtitle": "AWS, course"
+        },
+        {
+          "meta": "2023",
+          "title": "Architecting on AWS",
+          "subtitle": "AWS, course"
+        },
+        {
+          "meta": "2023",
+          "title": "Learning Go",
+          "subtitle": "Ardan Labs"
+        },
+        {
+          "meta": "2022",
+          "title": "Kubernetes Application Developer",
+          "subtitle": "A Cloud Guru, course"
+        },
+        {
+          "meta": "2022",
+          "title": "Architecture with Agility",
+          "subtitle": "Trifork Academy with Kevlin Henney"
+        },
+        {
+          "meta": "2021",
+          "title": "Software Architecture for Developers",
+          "subtitle": "Trifork Academy, workshop by Simon Brown"
+        },
+        {
+          "meta": "2021",
+          "title": "Designing & Building Great APIs",
+          "subtitle": "Trifork Academy, workshop by Mike Amundsen"
+        },
+        {
+          "meta": "2020",
+          "title": "Domain-Driven Design Immersion",
+          "subtitle": "DDD Academy, workshop by Erik Evans"
+        },
+        {
+          "meta": "2016",
+          "title": "Test Driven Development hands-on",
+          "subtitle": "QWAN"
+        },
+        {
+          "meta": "2015",
+          "title": "MicroServices: Let's Build Some!",
+          "subtitle": "Workshop by Fred George"
+        },
+        {
+          "meta": "2013",
+          "title": "MongoDB for Java Developers",
+          "subtitle": "MongoDB"
+        }
+      ]
+    },
+    {
+      "id": "engineering-portfolio",
+      "title": "Engineering Portfolio",
+      "icon": "code",
+      "type": "timeline",
+      "entries": [
+        {
+          "meta": "2025",
+          "title": "Technology Governance Portal",
+          "subtitle": "Go, Nuxt, TypeScript, GitLab Pages, GenAI"
+        },
+        {
+          "meta": "2021 – 2023",
+          "title": "API & Integration Platform",
+          "subtitle": "OpenAPI, GitLab, AWS, Kubernetes, Tibco Flogo, Apache Pulsar"
+        },
+        {
+          "meta": "2018",
+          "title": "API Gateway, Service Registry, AuthN Server, Token Security",
+          "subtitle": "Java, Spring Boot, Netflix OSS, Docker"
+        },
+        {
+          "meta": "2015",
+          "title": "Mobile API for the Backbase Platform",
+          "subtitle": "Java, Spring, RAML, Docker"
+        },
+        {
+          "meta": "2014",
+          "title": "JCalc – OSS Java library for calculations",
+          "subtitle": "Java"
+        },
+        {
+          "meta": "2014",
+          "title": "Strategic Debt Collection IT System",
+          "subtitle": "Java, JavaScript, Oracle DB, PL/SQL"
+        },
+        {
+          "meta": "2012 – 2014",
+          "title": "Evolution Framework",
+          "subtitle": "Contributed to a company-developed low-code and workflow framework using Java and JavaScript."
+        },
+        {
+          "meta": "2011",
+          "title": "Payment Module",
+          "subtitle": "Java, XSD"
+        },
+        {
+          "meta": "2010",
+          "title": "Shopping Planer",
+          "subtitle": "Java, Android"
+        },
+        {
+          "meta": "2009",
+          "title": "Master Thesis - SOA Web Services - App",
+          "subtitle": "Java, JSP, MySQL, GlassFish, Apache Tomcat, Axis2, JAX-WS, Google Maps, Linux Slax"
+        },
+        {
+          "meta": "2008",
+          "title": "Local hunting association web page with CMS",
+          "subtitle": "PHP, HTML, CSS, JavaScript, MySQL"
+        },
+        {
+          "meta": "2008",
+          "title": "Online Hotel Booking System",
+          "subtitle": "PHP, HTML, CSS, JavaScript, MySQL"
+        },
+        {
+          "meta": "2008",
+          "title": "Production Planning ERP",
+          "subtitle": "Visual Basic .NET, MS SQL"
+        },
+        {
+          "meta": "2007",
+          "title": "Dental clinic management",
+          "subtitle": "Visual Basic .NET, MS SQL"
+        },
+        {
+          "meta": "2006",
+          "title": "Media Collector",
+          "subtitle": "Visual Basic 6, MS Access DB"
+        },
+        {
+          "meta": "2000",
+          "title": "MixMaxStudio",
+          "subtitle": "Visual Basic 6"
+        },
+        {
+          "meta": "1999",
+          "title": "Solar System Educational App",
+          "subtitle": "Visual Basic 6"
+        }
+      ]
+    },
+    {
+      "id": "talks",
+      "title": "Talks",
+      "icon": "mic",
+      "type": "timeline",
+      "entries": [
+        {
+          "meta": "",
+          "title": "Putting your head in the clouds",
+          "subtitle": "@ JFall 2017"
+        },
+        {
+          "meta": "",
+          "title": "Co-speaker at JavaCro'13 Conference",
+          "subtitle": "@JavaCro 2013"
+        },
+        {
+          "meta": "",
+          "title": "JCalc Calculations in Java with open source API",
+          "subtitle": "@JavaCro 2014"
+        }
+      ]
+    },
+    {
+      "id": "languages",
+      "title": "Languages",
+      "icon": "flask",
+      "type": "languages",
+      "items": [
+        {
+          "name": "English",
+          "level": "Professional"
+        },
+        {
+          "name": "Croatian",
+          "level": "Native"
+        }
+      ]
+    },
+    {
+      "id": "hobbies",
+      "title": "Hobbies",
+      "icon": "leaf",
+      "type": "hobbies",
+      "items": [
+        {
+          "name": "Hiking",
+          "icon": "hiking"
+        },
+        {
+          "name": "Reading books (science, sci-fi, leadership, engineering, psychology)",
+          "icon": "book"
+        },
+        {
+          "name": "Engineering",
+          "icon": "laptop"
+        },
+        {
+          "name": "Swimming",
+          "icon": "ball"
+        }
+      ]
+    }
+  ]
+}

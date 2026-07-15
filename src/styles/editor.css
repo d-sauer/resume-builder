@@ -1,0 +1,58 @@
+/**
+ * Layout primitives shared by the per-type section editors. Global for the same
+ * reason as resume.css: the editors are separate components, so scoped styles in
+ * EditorPanel would not reach them.
+ */
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.sub-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 8px;
+}
+
+.grid-skill {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 6px;
+  align-items: start;
+}
+
+/* Flash the field the preview just jumped to, so the eye can find it. */
+@keyframes field-flash {
+  from {
+    background: rgb(36 224 162 / 35%);
+  }
+  to {
+    background: #fff;
+  }
+}
+
+.field-jumped {
+  animation: field-flash 1.2s ease-out;
+}
