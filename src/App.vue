@@ -1,8 +1,11 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { defineAsyncComponent, onMounted, ref } from 'vue'
 import EditorPanel from './components/EditorPanel.vue'
 import ResumePreview from './components/ResumePreview.vue'
 import { useResume } from './useResume.js'
+
+// The markdown editor is a heavy dependency; load it only when notes are opened.
+const NotesDialog = defineAsyncComponent(() => import('./components/NotesDialog.vue'))
 
 const {
   resume,
@@ -15,6 +18,7 @@ const {
 } = useResume()
 
 const showEditor = ref(true)
+const showNotes = ref(false)
 const importInput = ref(null)
 const notice = ref('')
 
@@ -75,6 +79,20 @@ function print() {
 
       <div class="spacer" />
 
+      <button
+        type="button"
+        class="icon-btn"
+        title="Notes"
+        aria-label="Notes"
+        @click="showNotes = true"
+      >
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M5 3h11l4 4v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm10 1.5V8h3.5L15 4.5ZM7 11h10v1.5H7V11Zm0 3.5h10V16H7v-1.5ZM7 8h6v1.5H7V8Z"
+          />
+        </svg>
+      </button>
       <button type="button" @click="showEditor = !showEditor">
         {{ showEditor ? 'Hide' : 'Show' }} editor
       </button>
@@ -100,6 +118,13 @@ function print() {
         <ResumePreview :resume="resume" />
       </div>
     </main>
+
+    <NotesDialog
+      v-if="resume && showNotes"
+      v-model="resume.notes"
+      :modified-at="resume.notesModifiedAt"
+      @close="showNotes = false"
+    />
   </div>
 </template>
 
@@ -122,6 +147,14 @@ function print() {
 
 .brand {
   font-size: 14px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  color: var(--muted);
 }
 
 .spacer {

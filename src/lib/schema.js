@@ -6,8 +6,10 @@
  * Version history:
  *   0 — unversioned; the original shape (no schemaVersion, no meta).
  *   1 — adds schemaVersion + meta.
+ *   2 — adds top-level `notes` (markdown) plus `contentModifiedAt` and
+ *       `notesModifiedAt` timestamps tracking when each last changed.
  */
-export const SCHEMA_VERSION = 1
+export const SCHEMA_VERSION = 2
 export const APP_VERSION = '1.0.0'
 
 /** Applied in order to lift a document from version n to n + 1. */
@@ -16,6 +18,13 @@ const MIGRATIONS = {
     schemaVersion: 1,
     meta: { app: 'resume-builder', appVersion: APP_VERSION, exportedAt: null },
     ...data,
+  }),
+  1: (data) => ({
+    ...data,
+    schemaVersion: 2,
+    notes: '',
+    contentModifiedAt: null,
+    notesModifiedAt: null,
   }),
 }
 
@@ -65,6 +74,12 @@ export function validate(data) {
   data.basics.contacts ??= []
   if (!Array.isArray(data.basics.contacts)) throw new SchemaError('"basics.contacts" must be a list')
   if (!Array.isArray(data.sections)) throw new SchemaError('Missing "sections" list')
+
+  // Notes are free-form and optional; coerce rather than reject so a slightly
+  // malformed hand-edit still opens.
+  if (typeof data.notes !== 'string') data.notes = ''
+  if (typeof data.contentModifiedAt !== 'string') data.contentModifiedAt = null
+  if (typeof data.notesModifiedAt !== 'string') data.notesModifiedAt = null
 
   const seen = new Set()
   for (const [i, section] of data.sections.entries()) {

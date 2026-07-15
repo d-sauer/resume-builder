@@ -1,4 +1,4 @@
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import seed from './seed/resume.json'
 import { APP_VERSION, SCHEMA_VERSION, migrate, newId, validate } from './lib/schema.js'
 import { sectionType } from './sections/registry.js'
@@ -49,10 +49,24 @@ function remember(key, value) {
 }
 
 /**
+ * Loading a whole document is not an edit, so suppress the modified-at stamping
+ * for one flush cycle: the watchers below fire once on the swap (new references),
+ * and this skips exactly that firing without swallowing the user's next keystroke.
+ */
+let settling = false
+function settle() {
+  settling = true
+  nextTick(() => {
+    settling = false
+  })
+}
+
+/**
  * Take `data` as the working copy and treat it as matching the file on disk —
  * true for the seed, for a freshly imported file, and after an export.
  */
 function adopt(data) {
+  settle()
   resume.value = data
   exported.value = serialise(data)
   remember(EXPORT_KEY, exported.value)
@@ -73,6 +87,7 @@ export function boot() {
 
   if (stored) {
     try {
+      settle()
       resume.value = parse(JSON.parse(stored))
       // Restore what was last exported too, so the "not exported" pill stays
       // accurate across a reload instead of crying wolf on an untouched draft.
@@ -100,6 +115,27 @@ watch(
     timer = setTimeout(() => remember(STORAGE_KEY, serialise(resume.value)), AUTOSAVE_MS)
   },
   { deep: true },
+)
+
+// The document records when its content and its notes last changed, kept apart
+// so a note tweak does not look like a resume edit and vice versa. The getters
+// read only their own slice, so stamping one field never retriggers the other
+// watcher (nor itself). `settling` skips the firing caused by loading a file.
+watch(
+  () => resume.value && [resume.value.basics, resume.value.sections],
+  () => {
+    if (!resume.value || settling) return
+    resume.value.contentModifiedAt = new Date().toISOString()
+  },
+  { deep: true },
+)
+
+watch(
+  () => resume.value?.notes,
+  () => {
+    if (!resume.value || settling) return
+    resume.value.notesModifiedAt = new Date().toISOString()
+  },
 )
 
 function exportToFile(filename = 'resume.json') {
