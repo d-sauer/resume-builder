@@ -1,0 +1,101 @@
+:root {
+  --accent: #24e0a2;
+  --ink: #3d3d3d;
+  --muted: #808080;
+  --rule: #e6e6e6;
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e9ebed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+  border-color: var(--accent);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+button.danger:hover {
+  border-color: #b3261e;
+  color: #b3261e;
+}
+
+button.add {
+  align-self: flex-start;
+  border-style: dashed;
+  color: var(--muted);
+}
+
+@page {
+  size: A4;
+  /* Zero margin so the browser leaves no room for its own print
+     header (date/title) and footer (URL/page number). The page's
+     own whitespace is applied via .sheet padding in resume.css. */
+  margin: 0;
+}

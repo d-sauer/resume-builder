@@ -1,0 +1,309 @@
+/**
+ * The "classic" resume look. Global rather than scoped, because the section
+ * views are separate components that share these classes (`.bullets` is used by
+ * both the bullets section and timeline entries, `.level` by both skills and
+ * languages). A future template is a different stylesheet plus a different set
+ * of view components in the registry.
+ */
+
+.sheet {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  box-sizing: border-box;
+  padding: 18mm 16mm;
+  background: #fff;
+  color: var(--ink);
+  font-size: 9.4pt;
+  line-height: 1.45;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 12mm;
+}
+
+.name {
+  margin: 0 0 4mm;
+  font-family: var(--font-display);
+  font-size: 24pt;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 8.4pt;
+}
+
+.contacts li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+}
+
+.contacts b {
+  font-weight: 700;
+}
+
+.contacts a,
+.contacts span {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.section {
+  break-inside: auto;
+  margin-bottom: 9mm;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 5mm;
+  font-family: var(--font-display);
+  font-size: 12pt;
+  font-weight: 400;
+}
+
+.badge {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.badge svg {
+  width: 13px;
+  height: 13px;
+  fill: #fff;
+}
+
+.rule {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.prose p {
+  margin: 0 0 3mm;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 8.2pt;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.bullets li {
+  margin-bottom: 1.5mm;
+}
+
+.bullets li::marker {
+  color: var(--muted);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 32mm 1fr;
+  gap: 6mm;
+  margin-bottom: 6mm;
+  break-inside: avoid;
+}
+
+.entry-meta {
+  padding-top: 1px;
+  color: var(--ink);
+  font-size: 8.2pt;
+}
+
+.entry-title {
+  margin: 0;
+  font-size: 11pt;
+  font-weight: 700;
+}
+
+.entry-subtitle {
+  margin: 0 0 1.5mm;
+  font-weight: 700;
+}
+
+.entry .bullets {
+  margin-top: 1mm;
+}
+
+.skill-group {
+  margin-bottom: 5mm;
+}
+
+.skill-group-name {
+  margin: 0 0 3mm;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5mm 4mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+  font-size: 8.6pt;
+}
+
+.level {
+  color: var(--accent);
+  font-size: 7.6pt;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.languages {
+  display: flex;
+  gap: 14mm;
+  margin: 0;
+  padding: 0 0 0 6mm;
+  list-style: none;
+}
+
+.languages li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 8.6pt;
+}
+
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6mm;
+  margin: 0;
+  padding: 0 0 0 6mm;
+  list-style: none;
+}
+
+.hobbies li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3mm;
+  text-align: center;
+  font-size: 8.6pt;
+}
+
+.hobby-icon {
+  width: 26px;
+  height: 26px;
+  fill: var(--accent);
+}
+
+/* Page break: a visible marker on screen, a forced break on paper. */
+.page-break {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  margin: 8mm 0;
+  border-top: 1px dashed var(--accent);
+  break-after: page;
+  page-break-after: always; /* legacy alias; some engines still only honour this */
+}
+
+.page-break-label {
+  padding: 0 8px;
+  background: #fff;
+  color: var(--accent);
+  font-size: 7.5pt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.unknown {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4mm;
+  border: 1px dashed #b3261e;
+  border-radius: 3px;
+  color: #b3261e;
+  font-size: 8.6pt;
+}
+
+/* Double-click anywhere on the sheet jumps to that field in the editor. */
+.sheet [data-field] {
+  cursor: text;
+}
+
+@media screen {
+  .sheet [data-field]:hover {
+    outline: 1px solid rgb(36 224 162 / 45%);
+    outline-offset: 2px;
+  }
+}
+
+@media print {
+  .sheet {
+    width: auto;
+    min-height: 0;
+    /* @page margin is 0 (to drop the browser header/footer), so the
+       page whitespace lives here instead. */
+    padding: 14mm;
+  }
+
+  /* The marker is an editing affordance; on paper only the break itself remains. */
+  .page-break {
+    margin: 0;
+    border-top: 0;
+  }
+
+  .page-break-label {
+    display: none;
+  }
+
+  .sheet [data-field]:hover {
+    outline: none;
+  }
+}
