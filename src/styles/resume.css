@@ -156,6 +156,7 @@
 .entry-subtitle {
   margin: 0 0 1.5mm;
   font-weight: 700;
+  color: var(--muted);
 }
 
 .entry .bullets {
