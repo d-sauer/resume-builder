@@ -1,6 +1,6 @@
 <script setup>
 import { sectionIcon } from '../lib/icons.js'
-import { hasChrome, sectionType } from '../sections/registry.js'
+import { hasChrome, isVisible, sectionType } from '../sections/registry.js'
 import { requestField } from '../useFieldFocus.js'
 
 defineProps({
@@ -42,9 +42,15 @@ function onDblClick(event) {
         v-if="!hasChrome(section.type)"
         :section="section"
         :path="`sections.${si}`"
+        :class="{ 'section-hidden': !isVisible(section) }"
       />
 
-      <section v-else class="section" :data-field="`sections.${si}.title`">
+      <section
+        v-else
+        class="section"
+        :class="{ 'section-hidden': !isVisible(section) }"
+        :data-field="`sections.${si}.title`"
+      >
         <h2 class="section-title">
           <span v-if="section.icon" class="badge" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path :d="sectionIcon(section.icon)" /></svg>

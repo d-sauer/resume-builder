@@ -1,6 +1,12 @@
 <script setup>
 import { nextTick, ref, watch } from 'vue'
-import { SECTION_TYPES, SECTION_TYPE_NAMES, hasChrome, sectionType } from '../sections/registry.js'
+import {
+  SECTION_TYPES,
+  SECTION_TYPE_NAMES,
+  hasChrome,
+  isVisible,
+  sectionType,
+} from '../sections/registry.js'
 import { HOBBY_ICON_NAMES, SECTION_ICON_NAMES } from '../lib/icons.js'
 import { move } from '../lib/array.js'
 import { useResume } from '../useResume.js'
@@ -26,6 +32,16 @@ function toggle(id) {
 function onAddSection() {
   const id = addSection(newType.value)
   toggle(id)
+}
+
+/**
+ * Hiding keeps the section in the document (and export) but drops it from the
+ * printed resume. Showing again removes the flag so a visible section carries no
+ * extra key.
+ */
+function toggleVisible(section) {
+  if (section.visible === false) delete section.visible
+  else section.visible = false
 }
 
 /**
@@ -102,7 +118,12 @@ watch(request, async (req) => {
       </button>
     </section>
 
-    <section v-for="(section, si) in resume.sections" :key="section.id" class="card">
+    <section
+      v-for="(section, si) in resume.sections"
+      :key="section.id"
+      class="card"
+      :class="{ 'is-hidden': !isVisible(section) }"
+    >
       <header class="card-head">
         <button type="button" class="disclose" @click="toggle(section.id)">
           {{ open.has(section.id) ? '▾' : '▸' }}
@@ -110,6 +131,27 @@ watch(request, async (req) => {
           <em>{{ section.type }}</em>
         </button>
         <div class="sub-actions">
+          <button
+            type="button"
+            class="eye"
+            :title="isVisible(section) ? 'Hide from printed resume' : 'Show in printed resume'"
+            :aria-label="isVisible(section) ? 'Hide section' : 'Show section'"
+            :aria-pressed="!isVisible(section)"
+            @click="toggleVisible(section)"
+          >
+            <svg v-if="isVisible(section)" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 5c-5 0-9 4.5-10 7 1 2.5 5 7 10 7s9-4.5 10-7c-1-2.5-5-7-10-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+              />
+            </svg>
+            <svg v-else viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M2 4.3 3.3 3 21 20.7 19.7 22l-3-3c-1.5.6-3 1-4.7 1-5 0-9-4.5-10-7 .5-1.2 1.7-3 3.5-4.4L2 4.3ZM12 16a4 4 0 0 1-3.8-5.2l1.6 1.6a2 2 0 0 0 2.4 2.4l1.6 1.6A4 4 0 0 1 12 16Zm0-11c5 0 9 4.5 10 7-.4 1-1.3 2.3-2.6 3.5l-3-3A4 4 0 0 0 9.5 6.6l-2-2C8.7 4.2 10.3 4 12 4Z"
+              />
+            </svg>
+          </button>
           <button type="button" @click="move(resume.sections, si, -1)">↑</button>
           <button type="button" @click="move(resume.sections, si, 1)">↓</button>
           <button type="button" class="danger" @click="resume.sections.splice(si, 1)">✕</button>
@@ -172,6 +214,31 @@ watch(request, async (req) => {
   border: 1px solid var(--rule);
   border-radius: 8px;
   background: #fff;
+}
+
+/* A hidden section still lives in the document, so it stays in the list but is
+   dimmed. The header (disclosure + eye) is lifted back to full strength so it
+   stays legible and the section can be un-hidden. */
+.card.is-hidden {
+  background: #f4f5f6;
+  border-style: dashed;
+}
+
+.card.is-hidden .card-body,
+.card.is-hidden .disclose {
+  opacity: 0.5;
+}
+
+.eye {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  color: var(--muted);
+}
+
+.card.is-hidden .eye {
+  color: var(--text, inherit);
 }
 
 .card h2 {

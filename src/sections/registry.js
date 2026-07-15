@@ -133,3 +133,13 @@ export function isKnownType(type) {
 export function hasChrome(type) {
   return sectionType(type).chrome !== false
 }
+
+/**
+ * A section is shown unless it explicitly opts out with `visible: false`. Hidden
+ * sections stay in the document (and the exported JSON) — they are dropped from
+ * the printed resume only. Keeping the default flag-free means visible sections
+ * carry no extra key.
+ */
+export function isVisible(section) {
+  return section.visible !== false
+}
